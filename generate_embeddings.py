@@ -1,8 +1,9 @@
 import openai
 import json
+import streamlit as st
 from tqdm import tqdm
 
-openai.api_key = "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"  # Replace this
+openai.api_key = st.secrets["MY_API_KEY"]
 
 # Load your existing data
 with open("2.1cleaned_citation_templates.jsonl", "r") as f:

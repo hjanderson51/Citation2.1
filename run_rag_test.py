@@ -2,15 +2,15 @@ import openai
 import json
 import faiss
 import numpy as np
+import streamlit as st
 from tqdm import tqdm
 
 # 🔑 SET YOUR API KEY
-openai.api_key = "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"
+openai.api_key = st.secrets["MY_API_KEY"]  # FIXED typo here
 
-# 🧠 Embed a single query or text
 def embed_text(text):
     try:
-        response = openai.embeddings.create(
+        response = openai.Embedding.create(  # FIXED incorrect method name
             input=text,
             model="text-embedding-3-small"
         )
