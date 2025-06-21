@@ -5,7 +5,7 @@ import numpy as np
 from tqdm import tqdm
 
 # 🔑 SET YOUR API KEY
-openai.api_key = "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"  # Replace with your actual API key
+openai.api_key = "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"  # Replace with your actual API key
 
 # 🧠 Embed a single query or text
 def embed_text(text):
