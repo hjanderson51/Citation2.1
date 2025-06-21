@@ -5,7 +5,7 @@ import faiss
 import numpy as np
 
 # 🔑 Load API key
-openai.api_key = st.secrets["OPENAI_API_KEY"]
+openai.api_key = "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"
 
 # 📥 Load embedded citation records
 with open("embedded_citation_templates.jsonl", "r") as f:
@@ -58,7 +58,7 @@ Answer:"""
     return response.choices[0].message.content.strip()
 
 # 🚀 Streamlit app UI
-st.title("🧾 Citation Style Guide Assistant")
+st.title("Citation Style Guide Assistant")
 
 query = st.text_input("Ask your question:", "What is the citation format for a newspaper obituary in Florida?")
 
@@ -68,9 +68,9 @@ if st.button("Get Citation Template"):
         if not top_matches:
             st.error("No matching templates found.")
         else:
-            st.subheader("🧠 Suggested Citation Format")
+            st.subheader("Suggested Citation Format")
             st.write(generate_response(query, top_matches))
 
-            st.subheader("🔍 Top Matching Templates")
+            st.subheader("Top Matching Templates")
             for i, match in enumerate(top_matches, 1):
                 st.markdown(f"**[{i}]** {match['template']}")
