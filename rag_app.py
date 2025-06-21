@@ -5,7 +5,7 @@ import faiss
 import numpy as np
 
 # 🔑 Load API key
-openai.api_key = st.secrets["OPENAI_API_KEY"]  # Replace this!
+openai.api_key = st.secrets["OPENAI_API_KEY"]
 
 # 📥 Load embedded citation records
 with open("embedded_citation_templates.jsonl", "r") as f:
